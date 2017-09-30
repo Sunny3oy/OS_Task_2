@@ -1,0 +1,63 @@
+First thing we have variables 
+int a=10, b=25, fq=0, fr=0;
+After this, we fork a child, the child will have a copy of the above variables
+Now we go to the if statement, in the parent, we will execute the else part of this if statement.
+However, within the child process, we will do the if statement.
+Now we will run the else part.
+the variables values are stille the same
+int a=10, b=25
+
+b=a+b-5;
+
+we will get the output of
+
+a=10
+b=30
+ID=3198
+
+Now we will run the child process. The child had a copy of the original values from start.
+int a=10, b=25
+
+we will run this part
+a=a+b;
+
+New values are
+int a=35, b=25
+
+output is
+a=35
+b=25
+ID=3199
+Right after this, we encounter a fork. This will create a new child with the previous new values
+int a=35, b=25
+
+Now if we look at the next if statement, we notice that the parent is within the if statement and child is in the else.
+
+Now we will run the parent.
+we will run this line.
+b=b+20;
+the values should be
+int a=35, b=45
+
+our output is
+a=35
+b=45
+ID=3199
+
+we notice that the ID is the same. This should happen because we are still within the first child and it is also a parent.
+
+Finally we will run the else part of this statement. 
+Let's recall that the values of the child are
+int a=35, b=25
+we will execute this line
+a=(a*b)+30;
+
+our new a is 905 and b is the same 25.
+
+our output is
+a=905
+b=25
+ID=3200
+
+we finally end here.
+
